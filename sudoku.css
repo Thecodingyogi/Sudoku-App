@@ -1,0 +1,142 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(images/natureimg.jpg);
+  background-size: cover;
+}
+
+h1 {
+  font-size: 26px;
+}
+
+header {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+#game-setup {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+#game-setup > * {
+  display: flex;
+  align-items: center; 
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 16px;
+}
+
+#stats {
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+body.dark {
+  background-color: darkcyan;
+  color: black;
+  background-blend-mode: multiply;
+}
+
+#diff > *{
+  padding-left: 5px;
+}
+
+#time > *{
+  padding-left: 5px;
+}
+
+#theme > *{
+  padding-left: 5px;
+}
+
+#start-button {
+  border-radius: 6px;
+  padding: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: rgb(108, 221, 221);
+}
+
+#game {
+  display: flex;
+  justify-content: center;
+  padding-left: 280px;
+}
+
+#number-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 206px;
+  width: 22%;
+  height: 22%;
+}
+
+#number-container > * {
+  border: 2px solid black;
+  border-radius: 10%;
+  font-size: 25px;
+  padding: 21px 23px;
+  text-align: center;
+  justify-content: center;
+  margin: 5px;
+}
+
+#board {
+  padding-top: 10px;
+  margin: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+  width: 432px;
+  height: 432px;
+
+}
+
+.tile {
+  border: 1px solid black;
+  width: 48px;
+  height: 48px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 16pt;
+  margin: 0px;
+  line-height: 48px;
+}
+
+p.selected {
+  background-color: lightblue;
+}
+
+p.incorrect {
+  color: red;
+}
+
+/* Apply thicker borders to the edges of subgrids */
+.tile:nth-child(3n),
+.tile:nth-child(6n) {
+  border-right-width: 3px;
+}
+
+.bottomBorder {
+  border-bottom-width: 3px;
+}
+
+footer {
+  text-align: center;
+}
