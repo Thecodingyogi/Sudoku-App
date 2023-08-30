@@ -1,27 +1,30 @@
 //Load boards manually
-const easy = ["142-9---57--4---898-5----242----48---3---126--8--72941-5-2-6----28--941--791-853-",
-"142893675763425189895617324217964853934581267586372941451236798328759416679148532"
+const easy = [
+  "142-9---57--4---898-5----242----48---3---126--8--72941-5-2-6----28--941--791-853-",
+  "142893675763425189895617324217964853934581267586372941451236798328759416679148532",
 ];
-const medium = ["---93------4--2-98-59--4-----72-8---5--6--9----8-5-67-2915--83--6-------485-29-67",
-"826935741374162598159784326637298415542617983918453672291576834763841259485329167"
+const medium = [
+  "---93------4--2-98-59--4-----72-8---5--6--9----8-5-67-2915--83--6-------485-29-67",
+  "826935741374162598159784326637298415542617983918453672291576834763841259485329167",
 ];
-const hard = ["4-6----59----4-2---7---------591--6--13---894---2----15-8----------3---8-4--6-1--",
-"436128759951746283872359416785914362213675894694283571528491637167532948349867125"
+const hard = [
+  "4-6----59----4-2---7---------591--6--13---894---2----15-8----------3---8-4--6-1--",
+  "436128759951746283872359416785914362213675894694283571528491637167532948349867125",
 ];
 
-var selectedNumber;
-var selectedTile;
-var disableSelect;
-var timer;
-var timeRemaining;
-var lives;
+let selectedNumber;
+let selectedTile;
+let disableSelect;
+let timer;
+let timeRemaining;
+let lives;
 
 window.onload = function () {
   //Starts new game when button is clicked
   id("start-button").addEventListener("click", startGame);
   //Add event listener to the number container
   for (let i = 0; i < id("number-container").children.length; i++) {
-    id("number-container").children[i].addEventListener("click", function() {
+    id("number-container").children[i].addEventListener("click", function () {
       //If number is not disabled
       if (!disableSelect) {
         //If number is already selected
@@ -42,9 +45,9 @@ window.onload = function () {
       }
     });
   }
-}
+};
 
-function startGame() { 
+function startGame() {
   let board;
   if (id("diff-1").checked) board = easy[0];
   else if (id("diff-2").checked) board = medium[0];
@@ -73,16 +76,16 @@ function startTimer() {
   //Sets timer for first second
   id("timer").textContent = timeConversion(timeRemaining);
   //Sets timer to update every second
-  timer = setInterval(function() {
-    timeRemaining --;
+  timer = setInterval(function () {
+    timeRemaining--;
     //If no time remaining end the game
     if (timeRemaining === 0) endGame();
     id("timer").textContent = timeConversion(timeRemaining);
-  }, 1000)
+  }, 1000);
 }
 //Converts seconds into string of MM:SS format
 function timeConversion(time) {
-  let minutes = Math.floor(time /60);
+  let minutes = Math.floor(time / 60);
   if (minutes < 10) minutes = "0" + minutes;
   let seconds = time % 60;
   if (seconds < 10) seconds = "0" + seconds;
@@ -90,54 +93,53 @@ function timeConversion(time) {
 }
 
 function generateBoard(board) {
-   //Clear previous boards
-    clearPrevious();
-    //Let used to increment tile ids
-    let idCount = 0;
-    //Create 81 tiles
-    for (let i = 0; i < 81; i++) {
-      //Create a new paragraph element
-      let tile = document.createElement("p");
-      //If tile is not blank
-      if (board.charAt(i) != "-") {
-        //Set tile text to correct number
-        tile.textContent = board.charAt(i);
-      } else {
-        //Add click event listener to tile
-        tile.addEventListener("click", function() {
-          //If selecting is not disabled
-          if (!disableSelect) {
-            //If the tile is already selected
-            if (tile.classList.contains("selected")) {
-              //Remove selected
-              tile.classList.remove("selected");
-              selectedTile = null;
-            } else {
-              //Deselect all other tiles
-              for (let i = 0; i < 81; i++) {
-                qsa(".tile")[i].classList.remove("selected");
-              }
-              //Add selection and update variable
-              tile.classList.add("selected");
-              selectedTile = tile;
-              updateMove();
+  //Clear previous boards
+  clearPrevious();
+  //Let used to increment tile ids
+  let idCount = 0;
+  //Create 81 tiles
+  for (let i = 0; i < 81; i++) {
+    //Create a new paragraph element
+    let tile = document.createElement("p");
+    //If tile is not blank
+    if (board.charAt(i) != "-") {
+      //Set tile text to correct number
+      tile.textContent = board.charAt(i);
+    } else {
+      //Add click event listener to tile
+      tile.addEventListener("click", function () {
+        //If selecting is not disabled
+        if (!disableSelect) {
+          //If the tile is already selected
+          if (tile.classList.contains("selected")) {
+            //Remove selected
+            tile.classList.remove("selected");
+            selectedTile = null;
+          } else {
+            //Deselect all other tiles
+            for (let i = 0; i < 81; i++) {
+              qsa(".tile")[i].classList.remove("selected");
             }
+            //Add selection and update variable
+            tile.classList.add("selected");
+            selectedTile = tile;
+            updateMove();
           }
-        });
-
-      }
-      //Assign tile id
-      tile.id = idCount;
-      //Increment for next tile
-      idCount ++; 
-      //Add tile class to all tiles
-      tile.classList.add("tile");
-      if ((tile.id > 17 && tile.id < 27) || (tile.id > 44 & tile.id < 54)) {
-        tile.classList.add("bottomBorder");
-      }
-      //Add tile to board
-      id("board").appendChild(tile);
+        }
+      });
     }
+    //Assign tile id
+    tile.id = idCount;
+    //Increment for next tile
+    idCount++;
+    //Add tile class to all tiles
+    tile.classList.add("tile");
+    if ((tile.id > 17 && tile.id < 27) || (tile.id > 44) & (tile.id < 54)) {
+      tile.classList.add("bottomBorder");
+    }
+    //Add tile to board
+    id("board").appendChild(tile);
+  }
 }
 
 function updateMove() {
@@ -164,9 +166,9 @@ function updateMove() {
       //Make tile turn red
       selectedTile.classList.add("incorrect");
       //Run in one second
-      setTimeout(function() {
+      setTimeout(function () {
         //subtract lives by one
-        lives --;
+        lives--;
         //No lives left in the game
         if (lives === 0) {
           endGame();
@@ -233,7 +235,7 @@ function clearPrevious() {
   selectedNumber = null;
 }
 
-//Helper functions 
+//Helper functions
 function id(id) {
   return document.getElementById(id);
 }
