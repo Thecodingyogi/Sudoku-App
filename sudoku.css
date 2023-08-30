@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -17,6 +17,7 @@ header {
   text-align: center;
   font-size: 16px;
   margin-bottom: 5px;
+  margin-top: 10px;
 }
 
 #game-setup {
@@ -27,7 +28,7 @@ header {
 
 #game-setup > * {
   display: flex;
-  align-items: center; 
+  align-items: center;
   padding-left: 30px;
   padding-right: 30px;
   margin-bottom: 10px;
@@ -50,15 +51,15 @@ body.dark {
   background-blend-mode: multiply;
 }
 
-#diff > *{
+#diff > * {
   padding-left: 5px;
 }
 
-#time > *{
+#time > * {
   padding-left: 5px;
 }
 
-#theme > *{
+#theme > * {
   padding-left: 5px;
 }
 
@@ -105,7 +106,6 @@ body.dark {
   align-content: flex-start;
   width: 432px;
   height: 432px;
-
 }
 
 .tile {
