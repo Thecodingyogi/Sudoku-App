@@ -64,8 +64,8 @@ body.dark {
 }
 
 #start-button {
-  border-radius: 6px;
-  padding: 6px;
+  border-radius: 5px;
+  padding: 8px;
   font-size: 14px;
   font-weight: bold;
   background-color: rgb(108, 221, 221);
@@ -74,7 +74,7 @@ body.dark {
 #game {
   display: flex;
   justify-content: center;
-  padding-left: 280px;
+  padding-left: 200px;
 }
 
 #number-container {
