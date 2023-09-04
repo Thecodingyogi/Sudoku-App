@@ -20,6 +20,18 @@ let timeRemaining;
 let lives;
 
 window.onload = function () {
+  // Add event listener to the theme radio buttons
+  const themeRadios = document.querySelectorAll('input[name="theme"]');
+  themeRadios.forEach((radio) => {
+    radio.addEventListener("change", function () {
+      // Handle theme change immediately
+      if (this.value === "Light") {
+        document.body.classList.remove("dark");
+      } else {
+        document.body.classList.add("dark");
+      }
+    });
+  });
   //Starts new game when button is clicked
   id("start-button").addEventListener("click", startGame);
   //Add event listener to the number container
@@ -60,19 +72,13 @@ function startGame() {
   generateBoard(board);
   //Starts Timer
   startTimer();
-  //Sets theme
-  if (id("theme-1").checked) {
-    qs("body").classList.remove("dark");
-  } else {
-    qs("body").classList.add("dark");
-  }
 }
 
 function startTimer() {
   //Sets time remaining based on input
-  if (id("time-1").checked) timeRemaining = 180;
-  else if (id("time-2").checked) timeRemaining = 300;
-  else timeRemaining = 600;
+  if (id("time-1").checked) timeRemaining = 300;
+  else if (id("time-2").checked) timeRemaining = 600;
+  else timeRemaining = 900;
   //Sets timer for first second
   id("timer").textContent = timeConversion(timeRemaining);
   //Sets timer to update every second
