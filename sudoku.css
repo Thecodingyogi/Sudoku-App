@@ -159,6 +159,14 @@ footer {
     margin-top: 10px;
   }
 
+  #game-setup > * {
+    display: flex;
+    align-items: flex-start;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-bottom: 10px;
+  }
+
   #start-button {
     font-size: 1rem;
     padding: 10px 10px;
@@ -192,12 +200,13 @@ footer {
   #number-container {
     margin-top: 0.8rem;
     width: auto;
+    margin-left: 1rem;
   }
 
   #number-container > * {
     width: 2.45rem;
     font-size: 1.6rem;
-    padding: 0.8rem;
+    padding: 0.4rem;
     border: 1px solid black;
     border-radius: 8%;
     text-align: center;
