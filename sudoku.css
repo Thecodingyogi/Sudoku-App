@@ -184,7 +184,8 @@ footer {
     display: grid;
     grid-template-columns: repeat(9, 1fr);
     gap: 0px;
-    width: 100%;
+    width: auto;
+    padding-right: 0.1rem;
   }
 
   .tile {
@@ -204,8 +205,8 @@ footer {
   }
 
   #number-container > * {
-    width: 2.45rem;
-    font-size: 1.6rem;
+    width: 2.35rem;
+    font-size: 1.5rem;
     padding: 0.4rem;
     border: 1px solid black;
     border-radius: 8%;
