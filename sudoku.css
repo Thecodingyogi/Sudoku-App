@@ -191,25 +191,25 @@ footer {
   .tile {
     border: 1px solid black;
     width: auto;
-    height: auto;
+    height: 40;
     text-align: center;
     vertical-align: middle;
-    font-size: 20pt;
+    font-size: 18pt;
     margin: 0px;
   }
 
   #number-container {
     margin-top: 0.8rem;
     width: auto;
-    margin-left: 1rem;
+    margin-left: 0.8rem;
   }
 
   #number-container > * {
-    width: 2.35rem;
-    font-size: 1.5rem;
-    padding: 0.4rem;
+    width: 2rem;
+    font-size: 1.4rem;
+    padding: 0.3rem;
     border: 1px solid black;
-    border-radius: 8%;
+    border-radius: 7%;
     text-align: center;
     margin: 0.033rem;
   }
