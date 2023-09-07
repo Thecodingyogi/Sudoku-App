@@ -53,6 +53,14 @@ body.dark {
   background-blend-mode: multiply;
 }
 
+body.dark .back-home {
+  color: rgb(233, 226, 226);
+}
+
+body.dark .back-home:hover {
+  color: #a86e49;
+}
+
 #diff > * {
   padding-left: 5px;
 }
@@ -66,11 +74,40 @@ body.dark {
 }
 
 #start-button {
-  border-radius: 3px;
+  border-radius: 4px;
   padding: 6px 16px;
-  font-size: 1.2rem;
-  background-color: black;
-  color: white;
+  font-size: 1.27rem;
+  background-color: #e4dbcf;
+  color: black;
+  transition: background-color 0.3s ease;
+}
+
+#start-button:hover {
+  background-color: #ddc8ad; /* Hover state */
+}
+#start-button:active {
+  background-color: #dcdcdc; /* Active state (when clicked) */
+}
+
+.back-home {
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  font-size: 15px;
+  transition: color 0.3s ease;
+  font-style: oblique;
+  font-weight: 550;
+}
+
+.back-home::before {
+  content: "\2190";
+  margin-right: 5px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.back-home:hover {
+  color: #6b442b;
 }
 
 #game {
@@ -98,10 +135,11 @@ body.dark {
 #number-container > * {
   width: 26%;
   font-size: 2rem;
-  padding: 15px;
+  padding: 10px;
   border: 1px solid black;
   border-radius: 8%;
   text-align: center;
+  margin: 1px;
 }
 
 #board {
