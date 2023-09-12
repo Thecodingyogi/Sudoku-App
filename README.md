@@ -10,7 +10,7 @@ Welcome to My Sudoku Game Application! This application allows you to play the c
 
 - [Cynthia Tonui](https://www.linkedin.com/in/cynthia-tonui-977b1977/)
 - [Follow me on Twitter](https://twitter.com/Thecodingyogi44)
-- [Sudoku Game](https://thecodingyogi.github.io/Sudoku-Game/sudoku.html)
+- [Play the Sudoku Game](https://thecodingyogi.github.io/Sudoku-Game/sudoku.html)
 - [Read About My Journey](https://medium.com/@cynthiatonui/sudoku-game-project-9e5c142931bd)
 
 ### Installation
@@ -25,7 +25,7 @@ Welcome to My Sudoku Game Application! This application allows you to play the c
 The objective of Sudoku is to fill a 9x9 grid with digits so that each column, each row, and each of the nine 3x3 subgrids that compose the grid (referred to as "regions") contain all of the digits from 1 to 9.
 
 - Choose a difficulty level, set a timer and choose your preferred theme.
-- click the "Create New Game" button to create a new game.
+- Click the "Create New Game" button to create a new game.
 - Click on a cell to select it, select a number on the numbers board on the right to input it on the selected cell.
 - The game will automatically highlight incorrect entries and provide feedback by the number turning red.
 - The game is won when the entire grid is filled correctly.
